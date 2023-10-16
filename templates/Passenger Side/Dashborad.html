@@ -1,0 +1,92 @@
+{% extends 'Fixed Side/Passenger.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <form action="{{ url_for('SearchTicket') }}" method="post">
+            <input type="number" value="{{UserId}}" style="display: none;" name="UserId">
+            <label> From </label>
+            <select name="From" required>
+                {% for Row in Fromdata %}
+                    <option value="{{Row[0]}}"> {{Row[0]}} </option>
+                {% endfor %}
+            </select>
+            <label> To </label>
+            <select name="To" required>
+                {% for Row in Todata %}
+                    <option value="{{Row[0]}}"> {{Row[0]}} </option>
+                {% endfor %}
+            </select>
+            <label> Trip Type </label>
+            <select required name="Type">
+                <option value="OneWay"> One Way </option>
+                <option value="RoundWay"> Round Way </option>
+                <option value="StopOverTrip"> Stop Over Trip </option>
+                <option value="CharterTrip"> Charter Trip </option>
+            </select>
+            <label> Trip Day </label>
+            <input type="date" required name="Date">
+            <label> Passengers </label>
+            <div>
+                <div>
+                    <label> Adults (+20) </label>
+                    <input type="number" value="1" name="Adult">
+                </div>
+                <div>
+                    <label> Child(ren) (+12) </label>
+                    <input type="number" value="0" name="Child">
+                </div>
+                <div>
+                    <label> Babies (-11) </label>
+                    <input type="number" value="0" name="Baby">
+                </div>
+            </div>
+            <label> Class </label>
+            <div>
+                <input type="radio" value="BestFare" name="Class">
+                <label> Best Fare </label>
+                <br>
+                <input type="radio" value="Business" name="Class">
+                <label> Business </label>
+            </div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="Half">
+        <ul>
+            <li>
+                <h1> Dashboard </h1>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyBook') }}">
+                    Modify Booking Class
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('CancelBook') }}">
+                    Cancel Booking
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ShowAviFlights') }}">
+                    Show Avilable Flights
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('TripsHistory') }}">
+                    Trips History
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('PProfile') }}">
+                    Profile
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ChangePassword') }}">
+                    Change Password
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

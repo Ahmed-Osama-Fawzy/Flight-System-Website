@@ -1,0 +1,47 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <h1> Add New Captin </h1>
+        <form method="post" action="">
+            <label> Username </label>
+            <input name="Username" type="text" required>
+            <label> First Name </label>
+            <input name="FName" type="text" required>
+            <label> Last Name </label>
+            <input name="LName" type="text" required>
+            <label> Password </label>
+            <input name="Password" type="password" required>
+            <label> Email </label>
+            <input name="Email" type="email" required>
+            <label> Mobile Number </label>
+            <input name="Mobile" type="number" required>
+            <label> Address </label>
+            <input name="Address" type="text" required>
+            <label> Birth Day </label>
+            <input name="Birthday" type="date" required>
+            <label> Gender </label>
+            <div>
+                <input type="radio" name="Gender" id="Male" value="Male">
+                <label for="Male">Male</label>
+                <br>
+                <input type="radio" name="Gender" id="Female" value="Female">
+                <label for="Female">Female</label>
+            </div>
+            <label> Nationalty </label>
+            <select required name="Nationalty">
+                <option value="Egypt"> Egypt </option>
+                <option value="Saudi"> Saudi </option>
+                <option value="Quait"> Quait </option>
+                <option value="Emarat"> Emarat </option>
+            </select>
+            <label> Salary </label>
+            <input type="number" name="Salary">
+            <input type="submit" value="Insert">
+        </form>
+    </div>
+</section>
+{% endblock %}

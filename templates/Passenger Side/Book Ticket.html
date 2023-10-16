@@ -1,0 +1,77 @@
+{% extends 'Fixed Side/Passenger.html' %}
+{% block Body %}
+<section class="One">
+    <div class="Full">
+        <h1> {{Message}} </h1>
+    </div>
+    <div class="Full">
+        <table>
+            <thead>
+                <th>
+                    <td> Airline </td>
+                    <td> From </td>
+                    <td> To </td>
+                    <td> Travelling date </td>
+                    <td> Arriaving date </td>
+                    <td> Type </td>
+                    <td> Class A </td>
+                    <td> Class B </td>
+                    <td> Class C </td>
+                </th>
+            </thead>
+            <tbody>
+               {%for Row in Result %}
+                    <tr>
+                        <td></td>
+                        <td> {{ Row[2] }} </td>
+                        <td> {{ Row[4] }} </td>
+                        <td> {{ Row[5] }} </td>
+                        <td> {{ Row[1] }} </td>
+                        <td> {{ Row[3] }} </td>
+                        <td> {{ Row[12] }} </td>
+                        <td>
+                            <form action="{{url_for('Getdata')}}" method="post">
+                                <input type="number" name="FlightId" value="{{Row[0]}}" style="display: none;">
+                                <input type="text" name="Class" value="A" style="display: none;">
+                                <input type="number" name="UserId" value="{{UserId}}" style="display: none;">
+                                <input type="number" name="Adult" value="{{Tickets[0]}}" style="display: none;">
+                                <input type="number" name="Child" value="{{Tickets[1]}}" style="display: none;">
+                                <input type="number" name="Baby" value="{{Tickets[2]}}" style="display: none;">
+                                <input type="number" name="Price" value="{{Row[16]}}" style="display: none;">
+                                <input type="submit" value="{{ Row[16] }}">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{url_for('Getdata')}}" method="post">
+                                <input type="number" name="FlightId" value="{{Row[0]}}" style="display: none;">
+                                <input type="text" name="Class" value="B" style="display: none;">
+                                <input type="number" name="UserId" value="{{UserId}}" style="display: none;">
+                                <input type="number" name="Adult" value="{{Tickets[0]}}" style="display: none;">
+                                <input type="number" name="Child" value="{{Tickets[1]}}" style="display: none;">
+                                <input type="number" name="Baby" value="{{Tickets[2]}}" style="display: none;">
+                                <input type="number" name="Price" value="{{Row[17]}}" style="display: none;">
+                                <input type="submit" value="{{ Row[17] }}">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{url_for('Getdata')}}" method="post">
+                                <input type="number" name="FlightId" value="{{Row[0]}}" style="display: none;">
+                                <input type="text" name="Class" value="C" style="display: none;">
+                                <input type="number" name="UserId" value="{{UserId}}" style="display: none;">
+                                <input type="number" name="Adult" value="{{Tickets[0]}}" style="display: none;">
+                                <input type="number" name="Child" value="{{Tickets[1]}}" style="display: none;">
+                                <input type="number" name="Baby" value="{{Tickets[2]}}" style="display: none;">
+                                <input type="number" name="Price" value="{{Row[18]}}" style="display: none;">
+                                <input type="submit" value="{{ Row[18] }}">
+                            </form>
+                        </td>
+                    </tr>
+               {% endfor %}
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'Fixed Side/Passenger.html' %}
+{% block Body %}
+<section class="Two">
+   <form method="post" action="{{ url_for('Insertdata') }}">
+        <input type="number" name="FlightId" value="{{data[1]}}" style="display: none;">
+        <input type="text" name="Class" value="{{data[2]}}" style="display: none;">
+        <input type="number" name="UserId" value="{{data[0]}}" style="display: none;">
+        <input type="number" name="Price" value="{{data[3]}}" style="display: none;">
+        <input type="number" name="Adult" value="{{T[0]}}" style="display: none;">
+        <input type="number" name="Child" value="{{T[1]}}" style="display: none;">
+        <input type="number" name="Baby" value="{{T[2]}}" style="display: none;">                   
+        <div>
+            {% for Row in Tickets[0] %}
+                <label> Name </label>
+                <input required type="text" name="AName{{Row}}">
+                <label> Age </label>
+                <input required type="number" name="AAge{{Row}}">
+                <label> Passport Number </label>
+                <input required type="number" name="APassportNumber{{Row}}">
+                <label> Diseace </label>
+                <input required type="text" name="ADiseace{{Row}}">
+            {% endfor %}
+        </div>
+        <hr>
+        <div>
+            {% for Row in Tickets[1] %}
+                <label> Name </label>
+                <input required type="text" name="CName{{Row}}">
+                <label> Age </label>
+                <input required type="number" name="CAge{{Row}}">
+                <label> Passport Number </label>
+                <input required type="number" name="CPassportNumber{{Row}}">
+                <label> Diseace </label>
+                <input required type="text" name="CDiseace{{Row}}">
+            {% endfor %}
+        </div>
+        <hr>
+        <div>
+            {% for Row in Tickets[2] %}
+                <label> Name </label>
+                <input required type="text" name="BName{{Row}}">
+                <label> Age </label>
+                <input required type="number" name="BAge{{Row}}">
+            {% endfor %}
+        </div>
+
+        <label> Payment Method </label>
+        <select name="Payment" required>
+            <option value="Cash"> Cash </option>
+            <option value="Visa"> Visa </option>
+            <option value="EWallet"> EWallet </option>
+            <option value="Fawry"> Fawry </option>
+            <option value="Amian"> Amian </option>
+        </select>
+        <input type="submit" value="Book">
+   </form>
+</section>
+{% endblock %}

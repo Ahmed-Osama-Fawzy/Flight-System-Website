@@ -1,0 +1,55 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="One">
+    <div class="X-Full">
+        <h1> Our Flights Trip </h1>
+        <form>
+            <input type="search" name="SearchValue" placeholder="Search Bar">
+        </form>
+    </div>
+    <div class="Full">
+        <table>
+            <thead>
+                <th>
+                    <td> Flight Id </td>
+                    <td> Airline </td>
+                    <td> From </td>
+                    <td> To </td>
+                    <td> Travelling date </td>
+                    <td> Arriaving date </td>
+                    <td> Aircraft Id </td>
+                    <td> Captin Id </td>
+                    <td> Staff </td>
+                    <td> Type </td>
+                    <td> Class A </td>
+                    <td> Class B </td>
+                    <td> Class C </td>
+                </th>
+            </thead>
+            <tbody>
+               {%for Row in data %}
+                    <tr>
+                        <td></td>
+                        <td> {{ Row[0] }} </td>
+                        <td> {{ Row[2] }} </td>
+                        <td> {{ Row[4] }} </td>
+                        <td> {{ Row[5] }} </td>
+                        <td> {{ Row[1] }} </td>
+                        <td> {{ Row[3] }} </td>
+                        <td> {{ Row[9] }} </td>
+                        <td> {{ Row[10] }} </td>
+                        <td> {{ Row[11] }} </td>
+                        <td> {{ Row[12] }} </td>
+                        <td> {{ Row[13] }} | {{ Row[16] }}</td>
+                        <td> {{ Row[14] }} | {{ Row[17] }} </td>
+                        <td> {{ Row[15] }} | {{ Row[18] }} </td>
+                    </tr>
+               {% endfor %}
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="One">
+    <div class="X-Full">
+        <h1> Our Aircrafts </h1>
+        <form>
+            <input type="search" name="SearchValue" placeholder="Search Bar">
+        </form>
+    </div>
+    <div class="Full">
+        <table>
+            <thead>
+                <th>
+                    <td> Id </td>
+                    <td> Name </td>
+                    <td> Brand </td>
+                    <td> Production Year </td>
+                    <td> Type </td>
+                    <td> Capacity </td>
+                    <td> Statues </td>
+                </th>
+            </thead>
+            <tbody>
+               {% for Row in data %}
+                    <tr>
+                        <td></td>
+                        <td> {{ Row[0] }}</td>
+                        <td> {{ Row[8] }} </td>
+                        <td> {{ Row[7] }} </td>
+                        <td> {{ Row[4] }} </td>
+                        <td> {{ Row[1] }} </td>
+                        <td> {{ Row[3] }} </td>
+                        <td> {{ Row[2] }} </td>
+                    </tr>
+               {% endfor %}
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</section>
+{% endblock %}

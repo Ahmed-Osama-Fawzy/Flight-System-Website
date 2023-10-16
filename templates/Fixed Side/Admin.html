@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='Main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='all.min.css') }}">
+    <link rel="icon" href="{{ url_for('static' , filename='images/image.jpeg') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+            </li>
+            <li>
+                <a href="{{ url_for('ADashboard') }}">
+                    {{ ComName }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('AddFlight') }}">
+                    Add Flight
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyFlight') }}">
+                    Modify Flight
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('AddAircraft') }}">
+                    Add Aircraft
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyAircraft') }}">
+                    Modify Aircraft
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('AddCaptin') }}">
+                    Add Captin
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyCaptin') }}">
+                    Modify Captin
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% block Body %}
+    {% endblock %}
+    <footer>
+        <div></div>
+        <div>
+            <h1> Join Our Newsletter </h1>
+            <h1> Follow US On </h1>
+            <ul>
+                <li>
+                    <i class="fa-2x fab fa-facebook"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-tiktok"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-youtube"></i>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div class="Full">
+        <h2> © 2023 EGYPTAIR, All Rights Reserved </h2>
+        <h2> Created By <span>AM Team</span> </h2>
+    </div>
+    <script src="{{ url_for('static' , filename='Main.js') }}"></script>
+    <script src="{{ url_for('static' , filename='all.min.js') }}"></script>
+    <script src="{{ url_for('static' , filename='all.js') }}"></script>
+</body>
+</html>

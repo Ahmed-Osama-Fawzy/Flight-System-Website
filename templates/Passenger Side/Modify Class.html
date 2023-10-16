@@ -1,0 +1,26 @@
+{% extends 'Fixed Side/Passenger.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <h1> Modify Ticket </h1>
+        <form method="post" action="{{url_for('UpdateClass')}}">
+            <label> Current Class {{Class}}</label>
+            <input type="text" name="Class" value="{{Class}}" style="display: none;">
+            <label> Current Ticket Price {{Price}}</label>
+            <input type="number" name="Price" value="{{Price}}" style="display: none;">
+            <input type="number" name="FlightId" value="{{FlightId}}" style="display: none;">
+            <input type="number" name="BookingId" value="{{Id}}" style="display: none;">
+            <label> Modify Class </label>
+            <select name="NewClass">
+                <option value="A"> A | {{ data[0][16] }} </option>
+                <option value="B"> B | {{ data[0][17] }} </option>
+                <option value="C"> C | {{ data[0][18] }} </option>
+            </select>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</section>
+{% endblock %}

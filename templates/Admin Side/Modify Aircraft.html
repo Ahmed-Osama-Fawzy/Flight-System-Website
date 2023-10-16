@@ -1,0 +1,44 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <h1> Modify Aircraft Info </h1>
+        <form method="post" action="{{url_for('ModifyAircraft')}}">
+            <label> Modify Name </label>
+            <input type="text" name="Name" required>
+            <label> Modify Brand </label>
+            <input type="text" name="Brand">
+            <label> Modify Type </label>
+            <select name="Type">
+                <option value="Large"> Large </option>
+                <option value="Medium"> Medium </option>
+                <option value="Small"> Small </option>
+                <option value="Helicopter"> Helicopter </option>
+            </select>
+            <br><br>
+            <label> Modify Capacity </label>
+            <input type="number" name="Capacity">
+            <label> Modify Class A Capacity </label>
+            <input type="number" name="ClassA">
+            <label> Modify Class B Capacity  </label>
+            <input type="number" name="ClassB">
+            <label> Modify Class C Capacity </label>
+            <input type="number" name="ClassC">
+            <label> Modify Production Date </label>
+            <input type="date" name="ProDate">
+            <label> Status </label>
+            <div>
+                <input type="radio" name="Status" id="InStatus" value="In Status">
+                <label for="InStatus">In Services</label>
+                <br>
+                <input type="radio" name="Status" id="OutStatus" value="Out Status">
+                <label for="OutStatus">Out Services</label>
+            </div>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</section>
+{% endblock %}

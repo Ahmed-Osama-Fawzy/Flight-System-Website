@@ -1,0 +1,16 @@
+{% extends 'Fixed Side/Passenger.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <h1> Cancel Ticket </h1>
+        <form method="post" action="{{ url_for('CancelBook') }}">
+            <label> Ticket Id </label>
+            <input type="number" required name="Id">
+            <input type="submit" value="Cancel">
+        </form>
+    </div>
+</section>
+{% endblock %}

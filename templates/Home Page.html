@@ -1,0 +1,204 @@
+{% extends 'Fixed Side/Header.html'%}
+{% block Body %}
+<header>
+    <h1> <span>AM AIRLINE</span> FOR YOUR HAPPINESS </h1>
+    <section class="Trips">
+        <div>
+            <form action="" method="post">
+                <div>
+                    <input type="radio" name="Type" value="OneWay">
+                    <label> One Way </label>
+                </div>
+                <div>
+                    <input type="radio" name="Type" value="MuliteWay">
+                    <label> Mulite Way </label>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div>
+                <i class="fas fa-2x fa-plane-departure"></i>
+                <h1> FROM </h1>
+                <h3> Cairo </h3>
+            </div>
+            <div>
+                <i class="fas fa-2x fa-plane-arrival"></i>
+                <h1> TO </h1>
+                <h3> Moroco </h3>
+            </div>
+            <div>
+                <i class="fas fa-2x fa-calendar"></i>
+                <h1> DATES </h1>
+                <h3> 23/5/2023 </h3>
+            </div>
+            <div>
+                <h1> CLASS </h1>
+                <h3> General </h3>
+            </div>
+        </div>
+    </section>
+</header>
+<section class="Offers">
+    <h1> <span>AM AIRLINE</span> OFFERS </h1>
+    <div>
+        <div>
+
+            <div>
+                <img src="{{ url_for('static' , filename='Images/Louxr.jpg') }}">
+                <div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-departure"></i>
+                        <h2> CAIRO </h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-arrival"></i>
+                        <h2> LOUXR </h2>
+                    </div>
+                    <div>
+                        <h2> 5000 EGP </h2>
+                    </div>
+                    <div>
+                        <h2> 24/12/2023 </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <img src="{{ url_for('static' , filename='Images/Alex.jpg') }}">
+                <div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-departure"></i>
+                        <h2> CAIRO </h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-arrival"></i>
+                        <h2> ALEX </h2>
+                    </div>
+                    <div>
+                        <h2> 5000 EGP </h2>
+                    </div>
+                    <div>
+                        <h2> 24/12/2023 </h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <img src="{{ url_for('static' , filename='Images/Elgona.jpg') }}">
+                <div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-departure"></i>
+                        <h2> CAIRO </h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-arrival"></i>
+                        <h2> GONA </h2>
+                    </div>
+                    <div>
+                        <h2> 5000 EGP </h2>
+                    </div>
+                    <div>
+                        <h2> 24/12/2023 </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <img src="{{ url_for('static' , filename='Images/Sharm-El-shaikh.jpg') }}">
+                <div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-departure"></i>
+                        <h2> CAIRO </h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-arrival"></i>
+                        <h2> SHARM EL SHEIKH </h2>
+                    </div>
+                    <div>
+                        <h2> 5000 EGP </h2>
+                    </div>
+                    <div>
+                        <h2> 24/12/2023 </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <img src="{{ url_for('static' , filename='Images/Aswan.jpg') }}">
+                <div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-departure"></i>
+                        <h2> CAIRO </h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-2x fa-plane-arrival"></i>
+                        <h2> ASWAN </h2>
+                    </div>
+                    <div>
+                        <h2> 5000 EGP </h2>
+                    </div>
+                    <div>
+                        <h2> 24/12/2023 </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="Board">
+    <h1> BEFORE YOU FLY </h1>
+    <div>
+        <div>
+            <i class="fa-3x fas fa-user-shield"></i>
+            <p> Save Info </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-id-badge"></i>
+            <p> Badge Id </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-suitcase-rolling"></i>
+            <p> Baggage </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-business-time"></i>
+            <p> Save Time </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="Services">
+    <h1> <span> AM AIRLINE </span>SERVICES </h1>
+    <div>
+        <div>
+            <i class="fa-3x fas fa-seedling"></i>
+            <h2> Healthy Food  </h2>
+            <p> Health and Fresh Foods To YOU </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-star"></i>
+            <h2> Perfect Service </h2>
+            <p> Have Perfect Staff For Your Relaxing </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-hand-holding-medical"></i>
+            <h2> Fastest Medical </h2>
+            <p> Have Perfect Staff For Your Health </p>
+        </div>
+        <div>
+            <i class="fa-3x fas fa-hourglass-half"></i>
+            <h2> Save Your Time </h2>
+            <p> Our Trips All Over The day </p>
+        </div>
+        <div>
+            <i class="fa-3x fas  fa-globe"></i>
+            <h2> Online Booking </h2>
+            <p>  Booking From All Over The World</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

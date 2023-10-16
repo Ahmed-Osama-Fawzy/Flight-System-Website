@@ -1,0 +1,91 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <h1> Modify Flight Trip Info </h1>
+        <form method="post" action="">
+            <label> Trip Id </label>
+            <input type="number" required name="Id">
+            <label> Modify Airline </label>
+            <input type="text" name="Airline">
+            <label> Modify Traveling Date </label>
+            <input type="datetime" name="Travelingdate">
+            <label> Modify Arriveing Date </label>
+            <input type="datetime" name="Arriveingdate">
+            <label> Modify From </label>
+            <select name="From">
+                <option value="Egypt"> Egypt </option>
+                <option value="Saudi"> Saudi </option>
+                <option value="Emarat"> Emarat </option>
+                <option value="Aswan"> Aswan </option>
+                <option value="Alex"> Alex </option>
+            </select>
+            <label> Modify To </label>
+            <select name="To">
+                <option value="Egypt"> Egypt </option>
+                <option value="Saudi"> Saudi </option>
+                <option value="Emarat"> Emarat </option>
+                <option value="Aswan"> Aswan </option>
+                <option value="Alex"> Alex </option>
+            </select>
+            <label> Modify Class A Tickkrt Price</label>
+            <input type="number" name="ClassA">
+            <label> Modify Class B Tickkrt Price</label>
+            <input type="number" name="ClassB">
+            <label> Modify Class C Tickkrt Price</label>
+            <input type="number" name="ClassC">
+            <label> Modify Aircraft </label>
+            <select name="Aircraft">
+                {% for aircraft in aircrafts %}
+                    <option value="{{aircraft[0]}}"> {{ aircraft[8] }} | {{ aircraft[1] }} | {{aircraft[2]}} | {{ aircraft[3] }} </option>
+                {% endfor %}
+            </select>
+            <label>Modify Captin </label>
+            <select name="Captin">
+                {% for captin in captins %}
+                    <option value="{{captin[0]}}"> {{ captin[1][0][0] }} {{ captin[1][0][1] }} </option>
+                {% endfor %}
+            </select>
+            <label> Modify Staff </label>
+            <select name="Staff">
+                {% for Row in staffsdata %}
+                    <option value="{{ Row[0] }}"> {{ Row[0] }} </option>
+                {% endfor %}
+            </select>
+            <label>Modify Type Of Trip </label>
+            <select name="Type">
+                <option value="OneWay"> One Way </option>
+                <option value="RoundWay"> Round Way </option>
+                <option value="StopOverTrip"> Stop Over Trip </option>
+                <option value="CharterTrip"> Charter Trip </option>
+            </select>
+            <span class="RoundWay">
+                <label> Modify Return Date </label>
+                <input type="date" name="ReturnDate">
+            </span>
+            <span class="StopOver">
+                <label> Modify  Trinsit 1 </label>
+                <select required name="Trinsit1">
+                    <option value="Egypt"> Egypt </option>
+                </select>
+                <br>
+                <label> Modify Trinsit 2 </label>
+                <select required name="Trinsit2">
+                    <option value="Egypt"> Egypt </option>
+                </select>
+            </span>
+            <span class="Charter">
+                <label> Modify Company Label </label>
+                <input type="text" name="CompanyLabel">
+                <br>
+                <label> Modify Persons Number </label>
+                <input type="number" value="0" name="PersonsNumber">
+            </span>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</section>
+{% endblock %}

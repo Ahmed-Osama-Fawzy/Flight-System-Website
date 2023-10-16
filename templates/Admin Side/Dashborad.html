@@ -1,0 +1,65 @@
+{% extends 'Fixed Side/Admin.html' %}
+{% block Body %}
+<section class="Two">
+    <div class="Half">
+        <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+    </div>
+    <div class="Half">
+        <ul>
+            <li>
+                <h1> Dashboard </h1>
+            </li>
+            <li>
+                <a href="{{ url_for('AddFlight') }}">
+                    Add Trip
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyFlight') }}">
+                    Modify Trip Info
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('AddAircraft') }}">
+                    Add Aircraft
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyAircraft') }}">
+                    Modify Aircraft Info
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('AddCaptin') }}">
+                    Add Captin
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ModifyCaptin') }}">
+                    Modify Captin Info
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ShowAircrafts') }}">
+                    Show Aircrafts
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ShowFlight') }}">
+                    Show Journey
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ShowFlights') }}">
+                    Show Journeys
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('ChangePassword') }}">
+                    Change Password
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

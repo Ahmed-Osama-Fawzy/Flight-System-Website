@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='Main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='all.min.css') }}">
+    <link rel="icon" href="{{ url_for('static' , filename='images/image.jpeg') }}">
+    <title>{{ title }}</title>
+    <style>
+        .Cover h1 {
+            width: fit-content;
+            height:50px;
+            background-color: rgb(60, 110, 113);
+            color: white;
+            position: relative;
+            animation:copy 3s 1s steps(15) both;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 50px auto;
+            font-size: 34px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .Cover h1::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-color: black;
+        }
+        @keyframes copy {
+            from {
+                width: 0;
+            }
+            to {
+                width: 450px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <img src="{{ url_for('static' , filename='Images/logo-no-background.png') }}">
+            </li>
+            <li>
+                <a>
+                    {{ ComName }}
+                </a>
+            </li>
+            <li>
+                <a>
+                    Offers
+                </a>
+            </li>
+            <li>
+                <a>
+                    Services
+                </a>
+            </li>
+            <li>
+                <a>
+                    About us
+                </a>
+            </li>
+            <li>
+                <a>
+                    Contact Us
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('Login') }}">
+                    Login
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('Register') }}">
+                    Signup
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% block Body %}
+    {% endblock %}
+    <footer>
+        <div></div>
+        <div>
+            <h1> Join Our Newsletter </h1>
+            <h1> Follow US On </h1>
+            <ul>
+                <li>
+                    <i class="fa-2x fab fa-facebook"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-tiktok"></i>
+                </li>
+                <li>
+                    <i class="fa-2x fab fa-youtube"></i>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div class="Full">
+        <h2> © 2023 EGYPTAIR, All Rights Reserved </h2>
+        <h2> Created By <span>AM Team</span> </h2>
+    </div>
+    <script src="{{ url_for('static' , filename='Main.js') }}"></script>
+    <script src="{{ url_for('static' , filename='all.min.js') }}"></script>
+    <script src="{{ url_for('static' , filename='all.js') }}"></script>
+</body>
+</html>
